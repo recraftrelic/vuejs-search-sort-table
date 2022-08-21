@@ -1,14 +1,14 @@
 <template>
-  <Table />
+  <tablesearch/>
 </template>
 
 <script>
-import Table from './components/Table.vue'
+import tablesearch from './components/Table.vue'
 
 export default {
   name: 'App',
   components: {
-    Table
+    tablesearch
   }
 }
 </script>

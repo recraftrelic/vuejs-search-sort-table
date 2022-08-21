@@ -50,7 +50,7 @@ const performSearch = (rows, term) => {
 }
 
 export default {
-  name: 'Table',
+  name: 'table-search',
   data () {
     return {
       term: '',
@@ -123,7 +123,7 @@ export default {
     onSearch (e) {
       this.term = e.target.value;
       this.rows = performSearch(this.rawRows, this.term);
-    }
+    }  
   },
   mounted () {
     this.rows = [...this.rawRows];
