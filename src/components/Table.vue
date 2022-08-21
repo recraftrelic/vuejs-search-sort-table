@@ -3,6 +3,7 @@
     <div>
       <input
         type="text"
+        ref="search"
         class="border-2 mb-5 rounded h-10 p-2"
         placeholder="Search records"
         @input="onSearch"
@@ -50,7 +51,7 @@ const performSearch = (rows, term) => {
 }
 
 export default {
-  name: 'Table',
+  name: 'table-search',
   data () {
     return {
       term: '',
@@ -123,10 +124,14 @@ export default {
     onSearch (e) {
       this.term = e.target.value;
       this.rows = performSearch(this.rawRows, this.term);
-    }
+    },
+    focusInput() {
+      this.$refs.search.focus();
+    }  
   },
   mounted () {
     this.rows = [...this.rawRows];
+    this.focusInput();
   }
 }
 </script>
